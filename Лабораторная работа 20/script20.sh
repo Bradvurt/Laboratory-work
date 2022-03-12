@@ -4,15 +4,14 @@ echo "Enter the path to the key:"
 
 read key_path
 
+alpha=abcdefghijklmnopqrstuvwxyz
+
 key=$(cat "$key_path")
 
 echo "Enter the path to the message:"
 
 read message
 
-tr "A-Z" "a-z" <"$message" | tr "a-z" "$key"
-
-# Дешифровка:
-# cat "$@" | tr "$key" "A-Z"
+sed 'y/"$alpha"/"$key"/' <"$message"
 
 exit 0
