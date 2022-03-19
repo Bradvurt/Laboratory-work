@@ -12,6 +12,6 @@ echo "Enter the path to the message:"
 
 read message
 
-sed 'y/"$alpha"/"$key"/' <"$message"
+sed 'y/'"$alpha"'/'"$key"'/' <"$message"
 
 exit 0
