@@ -8,7 +8,7 @@ bool is_int(const char*str) {
     while(*str)  {
         if((*str< '0' || *str > '9') && *str != '-' && *str != '.')
             return false;
-        *str++;
+        str++;
     }
     return true;
 }

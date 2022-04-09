@@ -1,10 +1,11 @@
-all: exe lib
+all: main.o queue.o
+	gcc -o prog main.o queue.o 
 
-exe:	queue.h main.c lib
-	gcc main.c -L. -lQueue -o prog
+main.o:	main.c queue.o
+	gcc -g -Wall -pedantic -c main.c
 
-lib:	queue.h queue.c
-	gcc -shared -fPIC queue.c -o libQueue.so
+queue.o:	queue.h queue.c
+	gcc -g -Wall -pedantic -c queue.c
 
 clean:
 	-rm prog libQueue.so
