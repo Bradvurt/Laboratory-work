@@ -1,0 +1,12 @@
+all: create print add task
+
+create:
+	gcc base.h create.c -o create
+print:
+	gcc base.h print.c -o print
+add:
+	gcc base.h add.c -o add
+task:
+	gcc base.h task.c -o task
+clean:
+	rm create print add task
